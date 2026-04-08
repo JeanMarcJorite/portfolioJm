@@ -238,9 +238,9 @@ Nous avons développé une application complète avec le micro-framework Flask (
 
 export const skills = {
   langages: ["Java", "JavaScript", "Python", "HTML/CSS", "PHP", "VBA"],
-  frameworks: ["Flask", "VueJS", "NodeJS", "Flutter", "Symfony"],
+  frameworks: ["Flask", "VueJS", "React", "Angular", "NodeJS", "Flutter", "Symfony"],
   databases: ["MySQL", "MariaDB", "SQLite", "Oracle SQL"],
-  tools: ["GitHub", "GitLab", "Figma", "Scrum", "UML"],
+  tools: ["GitHub", "GitLab", "Figma", "Scrum", "UML", "Power BI", "Linux", "Windows", "Docker"],
 }
 
 export const education = [
