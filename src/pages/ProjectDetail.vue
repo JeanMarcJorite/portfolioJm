@@ -10,6 +10,7 @@ const router = useRouter()
 const page = ref(null)
 const loaded = ref(false)
 const selectedScreenshot = ref(null)
+const videoLoadErrors = ref({})
 
 useScrollReveal(page)
 
@@ -46,6 +47,13 @@ function openScreenshot(shot) {
 function closeScreenshot() {
   selectedScreenshot.value = null
   document.body.style.overflow = ''
+}
+
+function onVideoError(videoSrc) {
+  videoLoadErrors.value = {
+    ...videoLoadErrors.value,
+    [videoSrc]: true,
+  }
 }
 
 function onKeydown(event) {
@@ -205,11 +213,29 @@ onUnmounted(() => {
                   class="rounded-xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-stone-900/50 overflow-hidden"
                 >
                   <video
-                    :src="resolveMediaSrc(video.src)"
+                    v-if="!videoLoadErrors[video.src]"
                     controls
                     preload="metadata"
+                    playsinline
                     class="w-full aspect-video bg-black"
-                  ></video>
+                    @error="onVideoError(video.src)"
+                  >
+                    <source :src="resolveMediaSrc(video.src)" type="video/mp4" />
+                  </video>
+                  <div
+                    v-else
+                    class="w-full aspect-video bg-black/90 text-stone-200 flex flex-col items-center justify-center px-4 text-center"
+                  >
+                    <p class="text-sm font-medium mb-2">Lecture impossible dans ce navigateur</p>
+                    <a
+                      :href="resolveMediaSrc(video.src)"
+                      target="_blank"
+                      rel="noreferrer"
+                      class="text-xs text-amber-400 hover:text-amber-300 underline"
+                    >
+                      Ouvrir / télécharger la vidéo
+                    </a>
+                  </div>
                   <figcaption class="px-4 py-3 border-t border-stone-100 dark:border-stone-800">
                     <p class="text-sm font-medium text-stone-700 dark:text-stone-300">{{ i + 1 }}. {{ video.title }}</p>
                     <p class="text-xs text-stone-500 dark:text-stone-400 mt-1">{{ video.description }}</p>
