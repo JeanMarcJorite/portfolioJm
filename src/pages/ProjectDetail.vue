@@ -66,9 +66,9 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div ref="page" class="min-h-screen bg-stone-50 dark:bg-[#0a0a0a] transition-colors duration-300">
+  <div ref="page" class="min-h-screen bg-stone-50 dark:bg-[#0a0a0a]">
     <!-- Top bar -->
-    <div class="fixed top-0 left-0 w-full z-50 bg-stone-50/90 dark:bg-[#0a0a0a]/90 backdrop-blur-lg border-b border-stone-200/60 dark:border-stone-800/60 transition-colors">
+    <div class="fixed top-0 left-0 w-full z-50 bg-stone-50/90 dark:bg-[#0f0f0f]/90 backdrop-blur-lg border-b border-stone-200/60 dark:border-stone-800/60">
       <div class="max-w-7xl mx-auto px-6 md:px-12 py-4 flex items-center justify-between">
         <button
           @click="goBack"
@@ -79,7 +79,7 @@ onUnmounted(() => {
           </svg>
           <span class="font-medium">Retour</span>
         </button>
-        <router-link to="/" class="flex items-center gap-1.5">
+        <router-link :to="{ name: 'accueil' }" class="flex items-center gap-1.5">
           <span class="font-mono font-bold tracking-tight text-stone-900 dark:text-white">JMJ</span>
           <span class="w-2 h-2 rounded-full bg-amber-500"></span>
         </router-link>
