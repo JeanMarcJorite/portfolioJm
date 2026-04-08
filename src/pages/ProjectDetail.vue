@@ -32,6 +32,12 @@ function padNum(n) {
   return String(n + 1).padStart(2, '0')
 }
 
+function resolveMediaSrc(src) {
+  if (!src) return ''
+  if (/^(https?:|data:)/.test(src)) return src
+  return `${import.meta.env.BASE_URL}${src.replace(/^\/+/, '')}`
+}
+
 function openScreenshot(shot) {
   selectedScreenshot.value = shot
   document.body.style.overflow = 'hidden'
@@ -176,7 +182,7 @@ onUnmounted(() => {
                     @click="openScreenshot(shot)"
                   >
                     <img
-                      :src="shot.src"
+                      :src="resolveMediaSrc(shot.src)"
                       :alt="shot.alt"
                       loading="lazy"
                       class="w-full aspect-video object-cover cursor-zoom-in"
@@ -199,7 +205,7 @@ onUnmounted(() => {
                   class="rounded-xl border border-stone-200 dark:border-stone-800 bg-white dark:bg-stone-900/50 overflow-hidden"
                 >
                   <video
-                    :src="video.src"
+                    :src="resolveMediaSrc(video.src)"
                     controls
                     preload="metadata"
                     class="w-full aspect-video bg-black"
@@ -342,7 +348,7 @@ onUnmounted(() => {
         </button>
 
         <img
-          :src="selectedScreenshot.src"
+          :src="resolveMediaSrc(selectedScreenshot.src)"
           :alt="selectedScreenshot.alt"
           class="w-full max-h-[75vh] object-contain bg-black"
         />

@@ -7,6 +7,12 @@ const section = ref(null)
 const selectedImage = ref(null)
 useScrollReveal(section)
 
+function resolveMediaSrc(src) {
+  if (!src) return ''
+  if (/^(https?:|data:)/.test(src)) return src
+  return `${import.meta.env.BASE_URL}${src.replace(/^\/+/, '')}`
+}
+
 function openImage(calendar) {
   selectedImage.value = calendar
   document.body.style.overflow = 'hidden'
@@ -60,7 +66,7 @@ onUnmounted(() => {
         >
           <button type="button" class="w-full text-left" @click="openImage(calendar)">
             <img
-              :src="calendar.src"
+              :src="resolveMediaSrc(calendar.src)"
               :alt="calendar.alt"
               loading="lazy"
               class="w-full aspect-[16/10] object-cover cursor-zoom-in"
@@ -91,7 +97,7 @@ onUnmounted(() => {
           </svg>
         </button>
 
-        <img :src="selectedImage.src" :alt="selectedImage.alt" class="w-full max-h-[80vh] object-contain bg-black" />
+        <img :src="resolveMediaSrc(selectedImage.src)" :alt="selectedImage.alt" class="w-full max-h-[80vh] object-contain bg-black" />
         <div class="px-5 py-4 border-t border-stone-800 bg-stone-950">
           <p class="text-sm font-semibold text-white">{{ selectedImage.title }}</p>
         </div>
