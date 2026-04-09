@@ -7,9 +7,9 @@ useScrollReveal(section)
 </script>
 
 <template>
-  <section id="contact" ref="section" class="py-28 bg-white dark:bg-[#0f0f0f] transition-colors duration-300 relative overflow-hidden noise-bg">
+  <section id="contact" ref="section" class="py-24 transition-colors duration-300 relative overflow-hidden">
     <!-- Large faded number -->
-    <div class="absolute -right-10 top-10 text-[18rem] font-black text-stone-900 dark:text-white opacity-[0.02] dark:opacity-[0.03] select-none pointer-events-none leading-none font-mono">
+    <div class="absolute -right-10 top-10 text-[18rem] font-black text-slate-900 dark:text-white opacity-[0.03] dark:opacity-[0.05] select-none pointer-events-none leading-none font-mono">
       07
     </div>
 
@@ -20,7 +20,7 @@ useScrollReveal(section)
           <div data-reveal="left" class="section-num mb-4"><span>07 — Contact</span></div>
 
           <h2 data-reveal="up" data-reveal-delay="100"
-            class="text-4xl md:text-5xl font-black tracking-tight text-stone-900 dark:text-white mb-6 leading-tight">
+            class="text-4xl md:text-5xl font-black tracking-tight uppercase text-slate-900 dark:text-white mb-6 leading-tight">
             Travaillons<br/>
             <span class="text-amber-500">ensemble.</span>
           </h2>

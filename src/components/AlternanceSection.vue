@@ -40,15 +40,15 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <section id="alternance" ref="section" class="py-28 bg-white dark:bg-[#0f0f0f] transition-colors duration-300 relative overflow-hidden noise-bg">
-    <div class="absolute -right-10 top-10 text-[18rem] font-black text-stone-900 dark:text-white opacity-[0.02] dark:opacity-[0.03] select-none pointer-events-none leading-none font-mono">
+  <section id="alternance" ref="section" class="py-24 transition-colors duration-300 relative overflow-hidden">
+    <div class="absolute -right-10 top-10 text-[18rem] font-black text-slate-900 dark:text-white opacity-[0.03] dark:opacity-[0.05] select-none pointer-events-none leading-none font-mono">
       06
     </div>
 
     <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
       <div data-reveal="left" class="mb-12">
         <div class="section-num mb-4"><span>06 — Alternance</span></div>
-        <h2 class="text-3xl md:text-4xl font-black tracking-tight text-stone-900 dark:text-white transition-colors">
+        <h2 class="text-3xl md:text-4xl font-black tracking-tight uppercase text-slate-900 dark:text-white transition-colors">
           {{ alternanceSection.title }}
         </h2>
         <p class="mt-4 text-stone-600 dark:text-stone-400 max-w-3xl leading-relaxed">

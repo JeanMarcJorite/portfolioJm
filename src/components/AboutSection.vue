@@ -9,16 +9,16 @@ useScrollReveal(section)
 </script>
 
 <template>
-  <section id="apropos" ref="section" class="py-28 bg-stone-50 dark:bg-[#0a0a0a] transition-colors duration-300 relative noise-bg">
+  <section id="apropos" ref="section" class="py-24 transition-colors duration-300 relative">
     <!-- Large faded number -->
-    <div class="absolute -left-10 top-20 text-[18rem] font-black text-stone-900 dark:text-white opacity-[0.02] dark:opacity-[0.03] select-none pointer-events-none leading-none font-mono">
+    <div class="absolute -left-10 top-20 text-[18rem] font-black text-slate-900 dark:text-white opacity-[0.03] dark:opacity-[0.05] select-none pointer-events-none leading-none font-mono">
       02
     </div>
 
     <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
       <div data-reveal="left" class="mb-16">
         <div class="section-num mb-4"><span>02 — À propos</span></div>
-        <h2 class="text-3xl md:text-4xl font-black tracking-tight text-stone-900 dark:text-white transition-colors">
+        <h2 class="text-3xl md:text-4xl font-black tracking-tight uppercase text-slate-900 dark:text-white transition-colors">
           Parcours & Expérience
         </h2>
       </div>

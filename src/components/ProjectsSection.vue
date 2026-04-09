@@ -54,9 +54,9 @@ function padNum(n) {
 </script>
 
 <template>
-  <section id="projets" ref="section" class="py-28 bg-stone-50 dark:bg-[#0a0a0a] transition-colors duration-300 relative noise-bg">
+  <section id="projets" ref="section" class="py-24 transition-colors duration-300 relative">
     <!-- Large faded number -->
-    <div class="absolute -left-10 top-20 text-[18rem] font-black text-stone-900 dark:text-white opacity-[0.02] dark:opacity-[0.03] select-none pointer-events-none leading-none font-mono">
+    <div class="absolute -left-10 top-20 text-[18rem] font-black text-slate-900 dark:text-white opacity-[0.03] dark:opacity-[0.05] select-none pointer-events-none leading-none font-mono">
       04
     </div>
 
@@ -65,7 +65,7 @@ function padNum(n) {
       <div data-reveal="left" class="mb-16 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
         <div>
           <div class="section-num mb-4"><span>04 — Projets</span></div>
-          <h2 class="text-3xl md:text-4xl font-black tracking-tight text-stone-900 dark:text-white transition-colors">
+          <h2 class="text-3xl md:text-4xl font-black tracking-tight uppercase text-slate-900 dark:text-white transition-colors">
             Réalisations récentes
           </h2>
         </div>

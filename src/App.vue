@@ -11,7 +11,7 @@ const viewKey = computed(() =>
 </script>
 
 <template>
-  <div class="min-h-screen overflow-x-hidden bg-gray-50 dark:bg-slate-900 text-gray-900 dark:text-gray-100 font-sans antialiased transition-colors duration-300">
+  <div class="min-h-screen overflow-x-hidden text-slate-900 dark:text-slate-100 font-sans antialiased transition-colors duration-300">
     <NavBar v-if="isHome" />
     <router-view v-slot="{ Component }">
       <transition name="page" mode="out-in">
