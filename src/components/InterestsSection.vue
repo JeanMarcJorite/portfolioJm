@@ -13,10 +13,10 @@ useScrollReveal(section)
       05
     </div>
 
-    <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 relative z-10">
       <div data-reveal="left" class="mb-16">
         <div class="section-num mb-4"><span>05 — Centres d’intérêt</span></div>
-        <h2 class="text-3xl md:text-4xl font-black tracking-tight uppercase text-slate-900 dark:text-white transition-colors">
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-black tracking-tight text-slate-900 dark:text-white transition-colors">
           Ce qui m’anime
         </h2>
       </div>

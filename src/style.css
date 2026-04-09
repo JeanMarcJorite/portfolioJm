@@ -77,6 +77,17 @@ body {
   background: var(--color-accent);
 }
 
+@media (max-width: 640px) {
+  .section-num {
+    font-size: 0.62rem;
+    letter-spacing: 0.14em;
+    gap: 0.65rem;
+  }
+  .section-num::before {
+    width: 32px;
+  }
+}
+
 /* ===== UNIQUE: Noise texture overlay ===== */
 .noise-bg::before {
   content: '';

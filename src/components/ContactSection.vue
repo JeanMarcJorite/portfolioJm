@@ -13,14 +13,14 @@ useScrollReveal(section)
       07
     </div>
 
-    <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 relative z-10">
       <div class="grid lg:grid-cols-2 gap-16 items-center">
         <!-- Left: Content -->
         <div>
           <div data-reveal="left" class="section-num mb-4"><span>07 — Contact</span></div>
 
           <h2 data-reveal="up" data-reveal-delay="100"
-            class="text-4xl md:text-5xl font-black tracking-tight uppercase text-slate-900 dark:text-white mb-6 leading-tight">
+            class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-slate-900 dark:text-white mb-6 leading-tight">
             Travaillons<br/>
             <span class="text-amber-500">ensemble.</span>
           </h2>
@@ -45,7 +45,7 @@ useScrollReveal(section)
               </div>
               <div class="min-w-0">
                 <p class="text-xs font-mono text-stone-400 dark:text-stone-500 uppercase tracking-wider">Email</p>
-                <p class="text-sm font-medium text-stone-900 dark:text-white truncate group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">jeanmarcjorite38@gmail.com</p>
+                <p class="text-sm font-medium text-stone-900 dark:text-white break-all sm:break-normal group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">jeanmarcjorite38@gmail.com</p>
               </div>
               <svg class="w-4 h-4 text-stone-300 dark:text-stone-600 ml-auto flex-shrink-0 group-hover:text-amber-500 group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />

@@ -67,7 +67,7 @@ onUnmounted(() => {
     ]"
     class="fixed w-full z-50 transition-all duration-500 ease-out"
   >
-    <div class="max-w-7xl mx-auto px-6 md:px-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-12">
       <div class="rounded-xl border border-slate-900/15 dark:border-white/15 bg-[#f4f2ec]/85 dark:bg-black/70 backdrop-blur-md">
         <div class="px-4 md:px-6 py-3 flex justify-between items-center gap-4">
           <button @click="goHome" type="button" class="group flex items-center gap-2">
@@ -106,7 +106,7 @@ onUnmounted(() => {
             </button>
 
             <button @click="goToSection('#contact')" type="button"
-              class="hidden md:inline-flex items-center gap-2 px-4 py-2 bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-xs font-semibold uppercase tracking-wider rounded-md transition-colors">
+              class="hidden md:inline-flex items-center gap-2 px-4 py-2 bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-xs font-semibold tracking-wide rounded-md transition-colors">
               Contact
             </button>
 
