@@ -5,6 +5,9 @@ import { computed } from 'vue'
 
 const route = useRoute()
 const isHome = computed(() => route.name === 'accueil')
+const viewKey = computed(() =>
+  route.name === 'projet' ? route.fullPath : String(route.name || route.path)
+)
 </script>
 
 <template>
@@ -12,7 +15,7 @@ const isHome = computed(() => route.name === 'accueil')
     <NavBar v-if="isHome" />
     <router-view v-slot="{ Component }">
       <transition name="page" mode="out-in">
-        <component :is="Component" />
+        <component :is="Component" :key="viewKey" />
       </transition>
     </router-view>
   </div>

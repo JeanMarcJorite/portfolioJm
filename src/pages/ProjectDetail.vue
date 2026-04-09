@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed, onMounted, onUnmounted } from 'vue'
+import { ref, computed, onMounted, onUnmounted, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useScrollReveal } from '../composables/useScrollReveal'
 import { projects } from '../data'
@@ -66,6 +66,16 @@ onMounted(() => {
   setTimeout(() => { loaded.value = true }, 100)
   window.addEventListener('keydown', onKeydown)
 })
+
+watch(
+  () => route.params.slug,
+  () => {
+    loaded.value = false
+    requestAnimationFrame(() => {
+      loaded.value = true
+    })
+  }
+)
 
 onUnmounted(() => {
   window.removeEventListener('keydown', onKeydown)
