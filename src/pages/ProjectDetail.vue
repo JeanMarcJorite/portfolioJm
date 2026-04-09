@@ -132,7 +132,7 @@ onUnmounted(() => {
               <span class="font-mono text-xs text-stone-500 uppercase tracking-wider">{{ project.category }}</span>
             </div>
 
-            <h1 class="text-4xl md:text-5xl xl:text-6xl font-black text-white mb-6 leading-tight tracking-tight">{{ project.title }}</h1>
+            <h1 class="text-2xl sm:text-3xl md:text-5xl xl:text-6xl font-black text-white mb-6 leading-tight tracking-tight">{{ project.title }}</h1>
             <p class="text-base text-stone-400 max-w-2xl leading-relaxed">{{ project.description }}</p>
 
             <!-- Meta grid -->
