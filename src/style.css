@@ -17,6 +17,20 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Prevent horizontal drift/blank side areas on mobile and desktop */
+html,
+body,
+#app {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  overscroll-behavior-x: none;
+}
+
 /* Scroll progress bar */
 .scroll-progress {
   position: fixed;

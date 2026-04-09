@@ -24,19 +24,20 @@ export function useScrollReveal(containerRef) {
               const id = setTimeout(() => {
                 el.classList.add('revealed')
                 timers.delete(el)
+                observer?.unobserve(el)
               }, parseInt(delay))
               timers.set(el, id)
             } else {
               el.classList.add('revealed')
+              observer?.unobserve(el)
             }
           } else {
-            // Remove revealed class so animation replays on re-entry
-            // Cancel any pending reveal timer
+            // If element leaves before its delayed reveal, cancel pending timer.
+            // Do not remove `revealed`: animations should run only once.
             if (timers.has(el)) {
               clearTimeout(timers.get(el))
               timers.delete(el)
             }
-            el.classList.remove('revealed')
           }
         })
       },
@@ -50,6 +51,8 @@ export function useScrollReveal(containerRef) {
   })
 
   onUnmounted(() => {
+    timers.forEach((id) => clearTimeout(id))
+    timers.clear()
     if (observer) observer.disconnect()
   })
 }

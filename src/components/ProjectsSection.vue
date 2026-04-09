@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed, onMounted, onUnmounted } from 'vue'
+import { ref, computed } from 'vue'
 import { useRouter } from 'vue-router'
 import { useScrollReveal } from '../composables/useScrollReveal'
 import { projects } from '../data'
@@ -14,7 +14,6 @@ const total = computed(() => projects.length)
 const isDragging = ref(false)
 const dragStartX = ref(0)
 const dragOffset = ref(0)
-let autoplayTimer = null
 
 function next() {
   current.value = (current.value + 1) % total.value
@@ -52,15 +51,6 @@ function padNum(n) {
   return String(n + 1).padStart(2, '0')
 }
 
-onMounted(() => {
-  autoplayTimer = window.setInterval(() => {
-    if (!isDragging.value) next()
-  }, 5000)
-})
-
-onUnmounted(() => {
-  if (autoplayTimer) window.clearInterval(autoplayTimer)
-})
 </script>
 
 <template>

@@ -51,7 +51,7 @@ export const projects = [
       },
     ],
     tags: ["Symfony", "Angular", "Tailwind CSS", "Docker"],
-    date: "2024",
+    date: "2026",
     duration: "1 mois",
     team: "Équipe de 2",
     role: "Développeur FullStack",
@@ -103,16 +103,16 @@ Ma mission principale consistait à migrer une application web interne de suivi 
 - Analyse de l'application existante et recueil des besoins utilisateurs
 - Conception des tableaux de bord Power BI avec visualisations interactives
 - Développement de formulaires Power Apps pour la saisie des données
-- Mise en place de flux Power Automate pour les notifications et validations
+- Mise en place de flux Power Automate pour les notifications et validationsc
 - Tests utilisateurs et formation des équipes à la nouvelle solution
 
-**Résultats :** Réduction de 40% du temps de saisie, meilleure visibilité des indicateurs pour les responsables d'équipe.`,
+`,
     features: [
       "Tableaux de bord interactifs Power BI",
       "Formulaires de saisie Power Apps",
       "Flux d'automatisation Power Automate",
       "Notifications automatiques par email",
-      "Export de rapports PDF",
+      "Export de rapports Excel",
     ],
     challenges: [
       "Comprendre le métier et les processus industriels EDF",
@@ -164,14 +164,14 @@ Ma mission principale consistait à migrer une application web interne de suivi 
     duration: "5 mois",
     team: "Individuel",
     role: "Développeur FullStack",
-    longDescription: `Projet Personnel réalisé individuellement. L'objectif était de concevoir et développer une application mobile complète de planification de repas.
+    longDescription: `Projet personnel réalisé individuellement. L'objectif était de concevoir et développer une application mobile complète de planification de repas.
 
 L'application permet aux utilisateurs de planifier leurs repas de la semaine, de gérer leurs recettes favorites, de récupérer des recettes via l'API Spoonacular, et de générer automatiquement une liste de courses.
 
 **Réalisations clés :**
 - Conception des maquettes UI/UX sur Figma
 - Développement des interfaces utilisateur avec Flutter
-- Implémentation de la base de données locale SQLite pour le stockage hors-lignev  
+- Implémentation de la base de données locale SQLite pour le stockage hors-ligne
 - Intégration de l'API Spoonacular pour l'affichage et la recherche de recettes
 - Intégration de Firebase pour l'authentification et la synchronisation cloud
 - Mise en place du système de recherche et filtrage de recettes
@@ -184,16 +184,16 @@ L'application permet aux utilisateurs de planifier leurs repas de la semaine, de
       "Génération automatique de liste de courses",
       "Mode hors-ligne avec SQLite",
       "Synchronisation cloud via Firebase",
-      "Thème sombre / clair",
     ],
     challenges: [
       "Gestion complète du projet en autonomie",
       "Gestion du stockage local et de la synchronisation cloud",
+      "Gestion des contraintes d'intégration de l'API Spoonacular",
     ],
     futureImprovements: [
       "Optimisation des performances sur différents appareils",
       "Gestion des bugs liés à l'utilisation d'API",
-      "Ajout d'une section dédiée aux principes des réseaux sociaux",
+      "Ajout d'une section dédiée au partage sur les réseaux sociaux",
     ],
   },
   {
