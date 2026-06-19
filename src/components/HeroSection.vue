@@ -7,7 +7,7 @@ const router = useRouter()
 const loaded = ref(false)
 const typedText = ref('')
 const showCursor = ref(true)
-const fullText = 'Développeur Web FullStack'
+const fullText = 'Développeur informatique'
 
 function goToProjects() {
   router.push({ name: 'accueil', hash: '#projets' })
@@ -73,7 +73,7 @@ onMounted(() => {
               <div class="space-y-4 text-sm">
                 <div class="pb-3 border-b border-slate-900/10 dark:border-white/10">
                   <p class="font-mono text-[11px] uppercase tracking-wider text-slate-500 dark:text-slate-400">Role</p>
-                  <p class="mt-1 font-semibold text-slate-900 dark:text-white">Développeur Web FullStack</p>
+                  <p class="mt-1 font-semibold text-slate-900 dark:text-white">Développeur informatique</p>
                 </div>
                 <div class="pb-3 border-b border-slate-900/10 dark:border-white/10">
                   <p class="font-mono text-[11px] uppercase tracking-wider text-slate-500 dark:text-slate-400">Formation</p>
