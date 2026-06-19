@@ -328,7 +328,7 @@ export const interests = [
 export const alternanceSection = {
   title: "Alternance MIAGE",
   description:
-    "Je suis en recherche active d'une alternance pour mon parcours MIAGE. Voici les calendriers prévisionnels de formation pour M1 et M2.",
+    "Je suis en recherche active d'une alternance pour mon parcours MIAGE. Voici les calendriers de formation pour M1 et M2.",
   calendars: [
     {
       title: "Calendrier alternance M1 (2025/2026)",
