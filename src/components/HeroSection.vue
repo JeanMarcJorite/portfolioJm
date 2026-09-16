@@ -50,14 +50,12 @@ onBeforeUnmount(() => { disposed = true; });
           width="1080"
           height="2280"
         />
-        <span class="collage-cross">✳</span
-        ><span class="collage-caption">Du web au mobile.</span>
+        <span class="collage-caption">Du web au mobile.</span>
       </div>
       <router-link
         :to="{ name: 'accueil', hash: '#projets' }"
         class="circle-button hero-cta"
-        ><span>Voir mes<br />projets</span
-        ><span aria-hidden="true">↗</span></router-link
+        ><span>Voir mes<br />projets</span></router-link
       >
     </div>
     <div class="hero-bottom container">
@@ -73,17 +71,17 @@ onBeforeUnmount(() => { disposed = true; });
           download="CV-Jean-Marc-Jorite.pdf"
           class="cv-button"
           aria-label="Télécharger le CV de Jean-Marc Jorite"
-          >Télécharger mon CV <span aria-hidden="true">↓</span></a
+          >Télécharger mon CV</a
         ><a
           :href="profile.socials[0].href"
           target="_blank"
           rel="noopener noreferrer"
           class="text-link"
-          >GitHub ↗</a
+          >GitHub</a
         ><router-link
           :to="{ name: 'accueil', hash: '#apropos' }"
           class="text-link"
-          >Défiler pour découvrir ↓</router-link
+          >Défiler pour découvrir</router-link
         >
       </div>
     </div>

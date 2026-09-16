@@ -8,7 +8,6 @@ import SectionLabel from "./SectionLabel.vue";
     <div class="container">
       <SectionLabel number="02" text="À propos" />
       <div class="about-intro" data-reveal>
-        <span class="asterisk" aria-hidden="true">✳</span>
         <div>
           <h2 class="statement">{{ profile.approach }}</h2>
           <p class="intro-copy">{{ profile.introduction }}</p>

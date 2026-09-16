@@ -32,8 +32,7 @@ import ProjectVisual from "./ProjectVisual.vue";
             <div class="project-art">
               <ProjectVisual :project="project" :index="i" /><span
                 class="circle-button project-open"
-                ><span>Voir le<br />projet</span
-                ><span aria-hidden="true">↗</span></span
+                ><span>Voir le<br />projet</span></span
               >
             </div>
             <div class="project-meta">

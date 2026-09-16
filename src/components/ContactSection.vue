@@ -7,8 +7,7 @@ import SectionLabel from "./SectionLabel.vue";
     <div class="container">
       <SectionLabel number="07" text="Contact" />
       <h2 class="contact-title" data-reveal>
-        Travaillons<br /><em>— ensemble.</em
-        ><span class="contact-star" aria-hidden="true">✳</span>
+        Travaillons<br /><em>— ensemble.</em>
       </h2>
       <div class="contact-body">
         <p class="intro-copy">{{ profile.contactText }}</p>
@@ -22,10 +21,10 @@ import SectionLabel from "./SectionLabel.vue";
         </div>
       </div>
       <a class="contact-email" :href="'mailto:' + profile.email"
-        >{{ profile.email }}<span aria-hidden="true">↗</span></a
+        >{{ profile.email }}</a
       >
       <div class="contact-links">
-        <a :href="profile.phoneHref" class="text-link">{{ profile.phone }} ↗</a
+        <a :href="profile.phoneHref" class="text-link">{{ profile.phone }}</a
         ><a
           v-for="social in profile.socials"
           :key="social.label"
@@ -34,7 +33,7 @@ import SectionLabel from "./SectionLabel.vue";
           rel="noopener noreferrer"
           class="text-link"
           :aria-label="social.label + ' — ' + social.username"
-          >{{ social.label }} ↗</a
+          >{{ social.label }}</a
         >
       </div>
     </div>

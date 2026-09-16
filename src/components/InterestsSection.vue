@@ -8,7 +8,6 @@ import SectionLabel from "./SectionLabel.vue";
       <SectionLabel number="05" text="Centres d’intérêt" />
       <div class="section-heading" data-reveal>
         <h2 class="display-title">Ce qui <em>m’anime.</em></h2>
-        <span class="asterisk small" aria-hidden="true">✳</span>
       </div>
       <div class="interests-list">
         <article v-for="(item, i) in interests" :key="item.title" data-reveal>

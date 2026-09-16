@@ -188,9 +188,6 @@ em {
     background 300ms,
     color 300ms;
 }
-.circle-button > :last-child {
-  font-size: 26px;
-}
 .circle-button:hover,
 .circle-button:focus-visible {
   transform: rotate(-8deg);
@@ -789,9 +786,6 @@ em {
   opacity: 1;
   transform: none;
 }
-.project-open span:last-child {
-  font-size: 23px;
-}
 .project-meta {
   display: flex;
   justify-content: space-between;
@@ -1322,7 +1316,7 @@ em {
   }
   .mobile-nav a {
     display: grid;
-    grid-template-columns: 30px 1fr 30px;
+    grid-template-columns: 30px 1fr;
     gap: 15px;
     align-items: center;
     padding-block: 16px;
@@ -1333,10 +1327,6 @@ em {
   .mobile-nav a > span {
     font-size: 11px;
     color: #b7b6ae;
-  }
-  .mobile-nav a > span:last-child {
-    text-align: right;
-    font-size: 22px;
   }
   .mobile-nav a[aria-current="location"] {
     color: #ff826c;
@@ -1481,9 +1471,6 @@ em {
     font-size: 10px;
     gap: 4px;
   }
-  .hero-cta > :last-child {
-    font-size: 20px;
-  }
   .hero-bottom {
     padding-top: 30px;
   }
@@ -1609,9 +1596,6 @@ em {
     gap: 4px;
     opacity: 1;
     transform: none;
-  }
-  .project-open > :last-child {
-    font-size: 18px;
   }
   .project-meta .eyebrow {
     font-size: 8px;

@@ -148,7 +148,7 @@ onUnmounted(() => {
         "
         @click="closeMenu"
         ><span>0{{ i + 1 }}</span
-        >{{ link.label }}<span aria-hidden="true">↗</span></router-link
+        >{{ link.label }}</router-link
       >
         </nav>
       </div>
