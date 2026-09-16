@@ -1,15 +1,16 @@
 export const profile = {
   name: "Jean-Marc Jorite",
   role: "Développeur informatique",
+  cvPath: "cv-jean-marc-jorite.pdf",
   location: "Orléans, France",
-  formation: "Licence Informatique en MIAGE",
-  status: "Recherche d'Alternance",
+  formation: "Master 1 MIAGE — Université d'Orléans",
+  status: "Disponible dès maintenant",
   introduction:
-    "Actuellement en recherche active d'une alternance pour intégrer un master MIAGE dès septembre 2026.",
+    "Je recherche une alternance en développement informatique, orientée systèmes d'information, ERP et applications métiers.",
   approach:
     "J'aide à transformer des idées en produits web utiles, propres et lisibles.",
   contactText:
-    "Je suis actuellement à la recherche d'opportunités de stage et d'alternance. N'hésitez pas à me contacter pour échanger sur un projet ou une collaboration.",
+    "Je suis disponible dès maintenant pour une alternance au rythme de deux semaines en entreprise et deux semaines en formation.",
   email: "jeanmarcjorite38@gmail.com",
   phone: "06 36 10 83 53",
   phoneHref: "tel:+33636108353",

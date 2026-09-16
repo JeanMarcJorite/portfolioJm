@@ -503,6 +503,27 @@ em {
 .hero-baseline .text-link {
   border: none;
 }
+.cv-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+  padding: 12px 16px;
+  border: 1px solid rgba(242, 239, 231, 0.55);
+  color: var(--paper);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  line-height: 1;
+  text-transform: uppercase;
+  transition: background 180ms ease, border-color 180ms ease, color 180ms ease;
+}
+.cv-button:hover,
+.cv-button:focus-visible {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--ink);
+}
 .about-intro {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
@@ -1496,6 +1517,10 @@ em {
   }
   .hero-baseline > :first-child {
     grid-column: 1/-1;
+  }
+  .hero-baseline .cv-button {
+    grid-column: 1/-1;
+    justify-self: start;
   }
   .hero {
     min-height: 100svh;

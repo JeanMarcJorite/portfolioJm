@@ -15,8 +15,8 @@ const selectedImage = ref(null);
       <div class="alternance-intro" data-reveal>
         <div>
           <p class="eyebrow">
-            <span class="status-dot" aria-hidden="true"></span>Recherche active
-            · Septembre 2026
+            <span class="status-dot" aria-hidden="true"></span>Disponible dès
+            maintenant · Rythme 2 semaines / 2 semaines
           </p>
           <h2 class="display-title">Alternance<br /><em>MIAGE.</em></h2>
           <p class="intro-copy">{{ alternanceSection.description }}</p>
