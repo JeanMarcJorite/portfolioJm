@@ -396,14 +396,14 @@ export const alternanceSection = {
     "Je suis disponible dès maintenant pour une alternance en développement informatique. Voici les calendriers de formation pour M1 et M2.",
   calendars: [
     {
-      title: "Calendrier alternance M1 (2025/2026)",
+      title: "Calendrier alternance M1 (2026/2027)",
       src: "/images/alternance/m1-2025-2026.png",
-      alt: "Calendrier d'alternance MIAGE M1 2025 2026",
+      alt: "Calendrier d'alternance MIAGE M1 2026 2027",
     },
     {
-      title: "Calendrier alternance M2 (2026/2027)",
+      title: "Calendrier alternance M2 (2027/2028)",
       src: "/images/alternance/m2-2026-2027.png",
-      alt: "Calendrier d'alternance MIAGE M2 2026 2027",
+      alt: "Calendrier d'alternance MIAGE M2 2027 2028",
     },
   ],
 };
