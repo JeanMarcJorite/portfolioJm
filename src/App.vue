@@ -1,22 +1,17 @@
 <script setup>
-import NavBar from './components/NavBar.vue'
-import { useRoute } from 'vue-router'
-import { computed } from 'vue'
-
-const route = useRoute()
-const isHome = computed(() => route.name === 'accueil')
-const viewKey = computed(() =>
-  route.name === 'projet' ? route.fullPath : String(route.name || route.path)
-)
+import NavBar from "./components/NavBar.vue";
+function focusMain() {
+  const main = document.getElementById("main-content");
+  main?.focus({ preventScroll: true });
+  main?.scrollIntoView();
+}
 </script>
-
 <template>
-  <div class="min-h-screen overflow-x-hidden text-slate-900 dark:text-slate-100 font-sans antialiased transition-colors duration-300">
-    <NavBar v-if="isHome" />
-    <router-view v-slot="{ Component }">
-      <transition name="page" mode="out-in">
-        <component :is="Component" :key="viewKey" />
-      </transition>
-    </router-view>
-  </div>
+  <a href="#main-content" class="skip-link" @click.prevent="focusMain"
+    >Aller au contenu</a
+  ><NavBar /><router-view v-slot="{ Component, route }"
+    ><component
+      :is="Component"
+      :key="route.name === 'projet' ? route.params.slug : route.name"
+  /></router-view>
 </template>
