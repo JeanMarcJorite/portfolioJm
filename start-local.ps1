@@ -5,13 +5,11 @@ param(
 
 $ErrorActionPreference = 'Stop'
 $nodeCommand = Get-Command node -ErrorAction SilentlyContinue
-$nodeExecutable = if ($nodeCommand) { $nodeCommand.Source } else {
-    Join-Path $env:USERPROFILE '.cache\codex-runtimes\codex-primary-runtime\dependencies\node\bin\node.exe'
-}
+$nodeExecutable = if ($nodeCommand) { $nodeCommand.Source } else { $null }
 $viteExecutable = Join-Path $PSScriptRoot 'node_modules\vite\bin\vite.js'
 
-if (-not (Test-Path -LiteralPath $nodeExecutable)) {
-    throw 'Node.js est introuvable. Installez Node.js 22.12+ puis relancez ce script.'
+if (-not $nodeExecutable) {
+    throw 'Node.js est introuvable dans le PATH. Installez Node.js 22.12+ puis relancez ce script.'
 }
 if (-not (Test-Path -LiteralPath $viteExecutable)) {
     throw 'Les dépendances locales sont absentes. Exécutez npm ci dans le dossier du projet.'

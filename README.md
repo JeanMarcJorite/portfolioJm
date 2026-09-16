@@ -18,7 +18,7 @@ Le site est disponible sur `http://127.0.0.1:5173/portfolioJm/`.
 Les routes utilisent le hash, par exemple `#/projet/welabbudget`.
 Le chemin de base existant `/portfolioJm/` reste configuré dans Vite.
 
-Sur cette machine Windows, les dépendances sont installées. Si Node n'est pas dans le PATH, le lanceur peut utiliser le runtime déjà fourni par Codex :
+Sur Windows, le lanceur utilise Node.js installé sur la machine :
 
 ```powershell
 .\start-local.ps1

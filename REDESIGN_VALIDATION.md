@@ -39,7 +39,7 @@ La spécification PROMPT_REDESIGN.md a été lue avant les modifications puis re
 - Le mode de réduction des animations a été contrôlé dans le CSS, le routeur et le composable ; le réglage système de l'ordinateur n'a pas été modifié.
 - Les liens de contact et de réseaux sociaux ont été vérifiés par leur destination exacte ; aucun e-mail, appel ou message externe n'a été envoyé.
 - Les périodes et calendriers d'alternance d'origine ont été conservés, même lorsque leurs années ne s'alignent pas avec la période annoncée du futur master.
-- Le runtime Node fourni par Codex et une installation temporaire de npm ont permis l'installation et le build malgré leur absence dans le PATH. Un lanceur PowerShell local a été ajouté et testé.
+- Une installation temporaire de npm a permis l'installation et le build malgré l'absence de Node.js dans le PATH. Un lanceur PowerShell local a été ajouté pour les environnements disposant de Node.js.
 - npm a signalé le script postinstall d'esbuild comme non autorisé par son réglage par défaut ; le binaire déjà installé a néanmoins permis les builds et le serveur Vite sans erreur.
 
 ## Ressources manquantes
