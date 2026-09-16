@@ -1,7 +1,6 @@
 # Portfolio — Jean-Marc Jorite
 
 Portfolio local en Vue 3, Vue Router, Vite et Tailwind CSS 4.
-La direction artistique et les exigences de contenu sont décrites dans [PROMPT_REDESIGN.md](PROMPT_REDESIGN.md).
 
 ## Lancement
 
@@ -33,6 +32,7 @@ Arrêter le serveur avec Ctrl+C. Le lanceur écoute uniquement sur la machine lo
 - `src/data.js` : projets, formations, expériences, compétences, centres d'intérêt et calendriers.
 - `src/profile.js` : présentation et coordonnées existantes, centralisées.
 - `src/style.css` : variables graphiques, responsive, thèmes et animations.
+- `src/styles/experience.css` : séquences d’entrée et interactions animées.
 - `src/components/` : sections et composants partagés, notamment les visuels de projets et la modale native.
 - `src/pages/ProjectDetail.vue` : fiches projet, descriptions, galeries et vidéos.
 - `src/utils/` : résolution des URL sous le chemin de base et dimensions des images.
@@ -44,8 +44,6 @@ Les calendriers et les périodes de formation ont été conservés tels qu'ils �
 ## Vérifications
 
 La refonte a été contrôlée dans le navigateur aux largeurs 375, 768, 1280 et 1440 px.
-Les données ont été comparées à la version Git initiale, avec pour seule correction textuelle `validationsc` → `validations`.
-Les détails des contrôles sont consignés dans [REDESIGN_VALIDATION.md](REDESIGN_VALIDATION.md).
 
 Le projet ne comporte pas de script lint, de configuration TypeScript ni de suite de tests existante.
 Le build de production est la vérification technique disponible via npm.

@@ -10,6 +10,8 @@ import ProjectDescription from "../components/ProjectDescription.vue";
 import ImageLightbox from "../components/ImageLightbox.vue";
 import ContactSection from "../components/ContactSection.vue";
 import FooterSection from "../components/FooterSection.vue";
+import { shouldAnimateEntrance } from "../utils/motion";
+const animateEntrance = shouldAnimateEntrance();
 const route = useRoute();
 const page = ref(null);
 const selectedScreenshot = ref(null);
@@ -39,7 +41,7 @@ onMounted(() => {
 });
 </script>
 <template>
-  <div ref="page" class="detail-page">
+  <div ref="page" class="detail-page" :class="{ 'has-entrance': animateEntrance }">
     <main id="main-content" tabindex="-1">
       <template v-if="project">
         <section class="detail-hero section-dark">

@@ -12,6 +12,13 @@ dist
 dist-ssr
 *.local
 
+# Local documents and validation artifacts
+/output/
+/validation.local/
+/tmp/
+/PROMPT_REDESIGN.md
+/REDESIGN_VALIDATION.md
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

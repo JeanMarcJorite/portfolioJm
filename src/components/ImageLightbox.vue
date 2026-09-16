@@ -1,33 +1,16 @@
 <script setup>
-import { ref, watch, nextTick, onBeforeUnmount } from "vue";
+import { ref, watch } from "vue";
+import { useModalDialog } from "../composables/useModalDialog";
 import { mediaUrl } from "../utils/media";
 const props = defineProps({ image: { type: Object, default: null } });
 const emit = defineEmits(["close"]);
 const dialog = ref(null);
-let previousOverflow = "";
-let opener = null;
-watch(
-  () => props.image,
-  async (image) => {
-    await nextTick();
-    if (image && !dialog.value.open) {
-      opener = document.activeElement;
-      previousOverflow = document.body.style.overflow;
-      document.body.style.overflow = "hidden";
-      dialog.value.showModal();
-    } else if (!image && dialog.value.open) {
-      dialog.value.close();
-      document.body.style.overflow = previousOverflow;
-      opener?.focus();
-    }
-  },
-);
+const displayedImage = ref(props.image);
+watch(() => props.image, (image) => { if (image) displayedImage.value = image; });
+useModalDialog(dialog, () => Boolean(props.image));
 function close() {
   emit("close");
 }
-onBeforeUnmount(() => {
-  if (dialog.value?.open) document.body.style.overflow = previousOverflow;
-});
 </script>
 <template>
   <Teleport to="body">
@@ -42,7 +25,7 @@ onBeforeUnmount(() => {
         }
       "
     >
-      <div v-if="image" class="lightbox-content">
+      <div v-if="displayedImage" class="lightbox-content">
         <button
           type="button"
           class="icon-button lightbox-close"
@@ -52,12 +35,12 @@ onBeforeUnmount(() => {
         >
           ×
         </button>
-        <img :src="mediaUrl(image.src)" :alt="image.alt" />
+        <img :src="mediaUrl(displayedImage.src)" :alt="displayedImage.alt" />
         <div class="lightbox-caption">
-          <p id="lightbox-title">{{ image.title }}</p>
-          <p v-if="image.description" class="muted">{{ image.description }}</p>
+          <p id="lightbox-title">{{ displayedImage.title }}</p>
+          <p v-if="displayedImage.description" class="muted">{{ displayedImage.description }}</p>
           <a
-            :href="mediaUrl(image.src)"
+            :href="mediaUrl(displayedImage.src)"
             target="_blank"
             rel="noopener noreferrer"
             class="text-link"
