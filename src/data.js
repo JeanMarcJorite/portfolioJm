@@ -103,7 +103,7 @@ Ma mission principale consistait à migrer une application web interne de suivi 
 - Analyse de l'application existante et recueil des besoins utilisateurs
 - Conception des tableaux de bord Power BI avec visualisations interactives
 - Développement de formulaires Power Apps pour la saisie des données
-- Mise en place de flux Power Automate pour les notifications et validationsc
+- Mise en place de flux Power Automate pour les notifications et validations
 - Tests utilisateurs et formation des équipes à la nouvelle solution
 
 `,

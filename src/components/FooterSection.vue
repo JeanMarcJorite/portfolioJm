@@ -1,32 +1,31 @@
 <script setup>
-const year = new Date().getFullYear()
+import { profile } from "../profile";
+const year = new Date().getFullYear();
 </script>
-
 <template>
-  <footer class="border-t border-slate-900/15 dark:border-white/15">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 py-10 md:py-12">
-      <div class="grid md:grid-cols-2 gap-6 md:gap-8 items-end">
-        <div class="text-center md:text-left">
-          <p class="font-mono text-[10px] sm:text-[11px] uppercase tracking-[0.18em] sm:tracking-[0.24em] text-slate-500 dark:text-slate-400">Merci de votre visite</p>
-          <p class="mt-2 text-xl sm:text-2xl md:text-3xl font-bold leading-tight text-slate-900 dark:text-white">Créons quelque chose<br class="hidden sm:block" /><span class="sm:hidden"> </span>de mémorable.</p>
-          <p class="mt-4 text-[11px] sm:text-xs font-mono text-slate-500 dark:text-slate-400">Jean-Marc Jorite - {{ year }}</p>
-        </div>
-
-        <div class="flex md:justify-end items-center gap-2 flex-wrap">
-          <a href="https://github.com/JeanMarcJorite" target="_blank" rel="noopener noreferrer" aria-label="GitHub"
-            class="flex-1 sm:flex-none text-center min-w-[92px] px-4 py-2 border border-slate-900/15 dark:border-white/15 text-xs font-mono uppercase tracking-wider text-slate-700 dark:text-slate-200 hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-slate-900 transition-colors">
-            GitHub
-          </a>
-          <a href="mailto:jeanmarcjorite38@gmail.com" aria-label="Envoyer un email"
-            class="flex-1 sm:flex-none text-center min-w-[92px] px-4 py-2 border border-slate-900/15 dark:border-white/15 text-xs font-mono uppercase tracking-wider text-slate-700 dark:text-slate-200 hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-slate-900 transition-colors">
-            E-mail
-          </a>
-          <a href="https://www.linkedin.com/in/jean-marc-jorite-a788aa268/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
-            class="flex-1 sm:flex-none text-center min-w-[92px] px-4 py-2 border border-slate-900/15 dark:border-white/15 text-xs font-mono uppercase tracking-wider text-slate-700 dark:text-slate-200 hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-slate-900 transition-colors">
-            LinkedIn
-          </a>
-        </div>
+  <footer class="site-footer section-dark">
+    <div class="container footer-top">
+      <div>
+        <p class="eyebrow">Merci de votre visite</p>
+        <p>Créons quelque chose de mémorable.</p>
       </div>
+      <router-link :to="{ name: 'accueil' }" class="text-link"
+        >Retour à l’accueil ↑</router-link
+      >
+    </div>
+    <div class="container footer-bottom">
+      <span>{{ profile.name }} — {{ year }}</span>
+      <div>
+        <a
+          v-for="social in profile.socials"
+          :key="social.label"
+          :href="social.href"
+          target="_blank"
+          rel="noopener noreferrer"
+          >{{ social.label }} ↗</a
+        ><a :href="'mailto:' + profile.email">E-mail ↗</a>
+      </div>
+      <span class="footer-monogram" aria-hidden="true">JMJ.</span>
     </div>
   </footer>
 </template>
