@@ -22,7 +22,7 @@ const selectedImage = ref(null);
           <p class="intro-copy">{{ alternanceSection.description }}</p>
         </div>
         <a :href="'mailto:' + profile.email" class="circle-button"
-          ><span>Échangeons</span><span aria-hidden="true">↗</span></a
+          ><span>Échangeons</span></a
         >
       </div>
       <div class="calendar-grid">
@@ -42,7 +42,7 @@ const selectedImage = ref(null);
               :alt="calendar.alt"
               v-bind="imageSize(calendar.src)"
               loading="lazy"
-            /><span aria-hidden="true" class="image-expand">↗</span>
+            />
           </button>
           <figcaption>
             {{ calendar.title }}<span class="muted">Cliquer pour agrandir</span>

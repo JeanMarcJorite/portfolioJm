@@ -44,7 +44,7 @@ function close() {
             target="_blank"
             rel="noopener noreferrer"
             class="text-link"
-            >Ouvrir l’image originale ↗</a
+            >Ouvrir l’image originale</a
           >
         </div>
       </div>

@@ -10,7 +10,7 @@ const year = new Date().getFullYear();
         <p>Créons quelque chose de mémorable.</p>
       </div>
       <router-link :to="{ name: 'accueil' }" class="text-link"
-        >Retour à l’accueil ↑</router-link
+        >Retour à l’accueil</router-link
       >
     </div>
     <div class="container footer-bottom">
@@ -22,8 +22,8 @@ const year = new Date().getFullYear();
           :href="social.href"
           target="_blank"
           rel="noopener noreferrer"
-          >{{ social.label }} ↗</a
-        ><a :href="'mailto:' + profile.email">E-mail ↗</a>
+          >{{ social.label }}</a
+        ><a :href="'mailto:' + profile.email">E-mail</a>
       </div>
       <span class="footer-monogram" aria-hidden="true">JMJ.</span>
     </div>

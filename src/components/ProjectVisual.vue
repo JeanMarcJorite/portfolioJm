@@ -30,9 +30,6 @@ const mainImage = computed(
       }}</span>
     </template>
     <div v-else class="typographic-cover" aria-hidden="true">
-      <span class="cover-decoration">{{
-        project.slug === "stage-edf-power-bi" ? "↗" : "✳"
-      }}</span>
       <p>
         {{
           project.slug === "stage-edf-power-bi"

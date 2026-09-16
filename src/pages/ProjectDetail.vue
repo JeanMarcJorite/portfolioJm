@@ -49,7 +49,7 @@ onMounted(() => {
             <router-link
               :to="{ name: 'accueil', hash: '#projets' }"
               class="text-link back-link"
-              >← Retour aux projets</router-link
+              >Retour aux projets</router-link
             >
             <div class="detail-kicker">
               <span class="eyebrow"
@@ -143,7 +143,7 @@ onMounted(() => {
                     :alt="shot.alt"
                     v-bind="imageSize(shot.src)"
                     loading="lazy"
-                  /><span class="image-expand" aria-hidden="true">↗</span>
+                  />
                 </button>
                 <figcaption>
                   <span>{{ projectNumber(i) }} — {{ shot.title }}</span>
@@ -180,7 +180,7 @@ onMounted(() => {
                     target="_blank"
                     rel="noopener noreferrer"
                     class="text-link"
-                    >Ouvrir / télécharger la vidéo ↗</a
+                    >Ouvrir / télécharger la vidéo</a
                   >
                 </figcaption>
               </figure>
@@ -194,7 +194,7 @@ onMounted(() => {
               <router-link
                 :to="{ name: 'accueil', hash: '#projets' }"
                 class="text-link"
-                >Tous les projets ↗</router-link
+                >Tous les projets</router-link
               >
             </div>
             <div class="other-projects">
@@ -211,7 +211,7 @@ onMounted(() => {
                   <h3>{{ other.title }}</h3>
                   <p class="muted">{{ other.category }}</p>
                 </div>
-                <span aria-hidden="true">↗</span></router-link
+                </router-link
               >
             </div>
           </div>
@@ -226,7 +226,7 @@ onMounted(() => {
           <router-link
             :to="{ name: 'accueil', hash: '#projets' }"
             class="text-link"
-            >Retour aux projets ↗</router-link
+            >Retour aux projets</router-link
           >
         </div>
       </section>
