@@ -33,7 +33,15 @@ const mainImage = computed(
       <span class="cover-decoration">{{
         project.slug === "stage-edf-power-bi" ? "↗" : "✳"
       }}</span>
-      <p>{{ project.slug === "stage-edf-power-bi" ? "EDF" : "Ensemble." }}</p>
+      <p>
+        {{
+          project.slug === "stage-edf-power-bi"
+            ? "EDF"
+            : project.slug === "projet-musics"
+              ? "Musics"
+              : "Ensemble."
+        }}
+      </p>
       <span>{{
         project.slug === "stage-edf-power-bi"
           ? "Migration Power BI"

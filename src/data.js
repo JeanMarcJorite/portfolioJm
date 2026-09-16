@@ -11,7 +11,8 @@ export const projects = [
         src: "/images/welabbudget/01-login.png",
         alt: "Écran de connexion WeLabBudget",
         title: "Connexion",
-        description: "Écran d'authentification sécurisé pour accéder à l'espace WeLabBudget.",
+        description:
+          "Écran d'authentification sécurisé pour accéder à l'espace WeLabBudget.",
       },
       {
         src: "/images/welabbudget/02-dashboard.png",
@@ -23,36 +24,41 @@ export const projects = [
         src: "/images/welabbudget/03-depenses-scan.png",
         alt: "Centre de traitement des dépenses avec scan",
         title: "Dépenses & justificatifs",
-        description: "Traitement des dépenses avec scan des justificatifs et suivi des flux récents.",
+        description:
+          "Traitement des dépenses avec scan des justificatifs et suivi des flux récents.",
       },
       {
         src: "/images/welabbudget/04-salaires.png",
         alt: "Écran de contrôle de la masse salariale",
         title: "Salaires & contrats",
-        description: "Pilotage de la masse salariale et visualisation des contrats en cours.",
+        description:
+          "Pilotage de la masse salariale et visualisation des contrats en cours.",
       },
       {
         src: "/images/welabbudget/05-recettes-devis.png",
         alt: "Tableau des recettes projets et devis",
         title: "Recettes & devis",
-        description: "Vue consolidée des recettes, devis et statuts de suivi commercial.",
+        description:
+          "Vue consolidée des recettes, devis et statuts de suivi commercial.",
       },
       {
         src: "/images/welabbudget/06-editeur-devis.png",
         alt: "Éditeur de devis WeLabBudget",
         title: "Éditeur de devis",
-        description: "Création et finalisation de devis avec calcul automatique des montants.",
+        description:
+          "Création et finalisation de devis avec calcul automatique des montants.",
       },
       {
         src: "/images/welabbudget/07-profil.png",
         alt: "Profil utilisateur et paramètres",
         title: "Profil utilisateur",
-        description: "Paramètres du compte utilisateur et gestion des informations personnelles.",
+        description:
+          "Paramètres du compte utilisateur et gestion des informations personnelles.",
       },
     ],
-    tags: ["Symfony", "Angular", "Tailwind CSS", "Docker"],
+    tags: ["Angular", "Symfony", "Figma", "PostgreSQL"],
     date: "2026",
-    duration: "1 mois",
+    duration: "5 mois",
     team: "Équipe de 2",
     role: "Développeur FullStack",
     longDescription: `Projet de développement web réalisé en équipe de 2 pour l'association WeLab Cosmetics. L'application permet de centraliser le suivi budgétaire : dépenses, enveloppes de budget et consultation rapide des données financières.
@@ -121,47 +127,73 @@ Ma mission principale consistait à migrer une application web interne de suivi 
     ],
   },
   {
+    slug: "projet-musics",
+    title: "Projet Musics",
+    category: "Développement Web",
+    description:
+      "Application web développée en équipe de 3, reposant sur une architecture MVC.",
+    image: "",
+    tags: ["PHP", "Symfony", "HTML5", "CSS3", "JavaScript", "SQLite"],
+    date: "2024",
+    duration: "1 mois",
+    team: "Équipe de 3",
+    role: "Développeur Web",
+    longDescription: `Projet académique développé en équipe de 3. L'application web repose sur une architecture MVC.
+
+**Technologies utilisées :** PHP, Symfony, HTML5, CSS3, JavaScript et SQLite.`,
+    features: [
+      "Application web reposant sur une architecture MVC",
+      "Développement en équipe de 3",
+    ],
+    challenges: [],
+  },
+  {
     slug: "app-planification-repas",
     title: "Application Mobile — Nutrigram",
     category: "Développement FullStack",
     description:
-      "Application mobile multiplateforme de planification de repas. Intégration de l'API Spoonacular pour récupérer des recettes et projet réalisé sur 5 mois.",
+      "Application mobile multiplateforme de planification de repas. Intégration de l'API Spoonacular pour récupérer des recettes et projet réalisé sur 3 mois.",
     image: "",
     screenshots: [
       {
         src: "/images/nutrigram/01-accueil.jpg",
         alt: "Écran d'accueil Nutrigram avec suivi des calories",
         title: "Accueil & suivi calories",
-        description: "Vue d'ensemble quotidienne avec compteur de calories et suivi du poids.",
+        description:
+          "Vue d'ensemble quotidienne avec compteur de calories et suivi du poids.",
       },
       {
         src: "/images/nutrigram/02-plats-recherche.jpg",
         alt: "Écran de recherche de plats Nutrigram",
         title: "Recherche de plats",
-        description: "Recherche de recettes et consultation rapide des plats par catégorie.",
+        description:
+          "Recherche de recettes et consultation rapide des plats par catégorie.",
       },
       {
         src: "/images/nutrigram/03-calendrier-panier.jpg",
         alt: "Écran calendrier et panier Nutrigram",
         title: "Calendrier & panier",
-        description: "Planification des repas via calendrier et accès au panier de courses.",
+        description:
+          "Planification des repas via calendrier et accès au panier de courses.",
       },
     ],
     videos: [
       {
         src: "/videos/nutrigram/01-demo-navigation.mp4",
         title: "Démo API Spoonacular",
-        description: "Recherche et affichage de recettes récupérées via l'API Spoonacular.",
+        description:
+          "Recherche et affichage de recettes récupérées via l'API Spoonacular.",
       },
       {
         src: "/videos/nutrigram/02-demo-spoonacular.mp4",
         title: "Démo Panier",
-        description: "Ajout, suppression et gestion des ingrédients dans le panier de courses.",
+        description:
+          "Ajout, suppression et gestion des ingrédients dans le panier de courses.",
       },
     ],
     tags: ["Flutter", "Firebase", "SQLite", "Figma"],
     date: "2024",
-    duration: "5 mois",
+    duration: "3 mois",
     team: "Individuel",
     role: "Développeur FullStack",
     longDescription: `Projet personnel réalisé individuellement. L'objectif était de concevoir et développer une application mobile complète de planification de repas.
@@ -234,12 +266,39 @@ Nous avons développé une application complète avec le micro-framework Flask (
       "Conception d'une interface intuitive pour des utilisateurs non-techniques",
     ],
   },
-]
+];
 
 export const skills = {
-  langages: ["Java", "C#", "JavaScript", "Python", "HTML/CSS", "PHP", "VBA"],
-  frameworks: ["Flask", "VueJS", "React", "Angular", "NodeJS", "Flutter", "Symfony"],
-  databases: ["MySQL", "MariaDB", "SQLite", "Oracle SQL", "Firebase", "Supabase"],
+  langages: [
+    "Java",
+    "C#",
+    "JavaScript",
+    "Python",
+    "HTML/CSS",
+    "PHP",
+    "VBA",
+    "Dart",
+  ],
+  frameworks: [
+    "Flask",
+    "VueJS",
+    "React",
+    "Angular",
+    "NodeJS",
+    "Flutter",
+    "Symfony",
+    "Django",
+  ],
+  databases: [
+    "MySQL",
+    "MariaDB",
+    "SQLite",
+    "Oracle SQL",
+    "Firebase",
+    "Supabase",
+    "PostgreSQL",
+    "Doctrine ORM",
+  ],
   tools: [
     "GitHub",
     "GitLab",
@@ -250,28 +309,32 @@ export const skills = {
     "Power Apps",
     "Power Automate",
     "Power BI",
+    "Power Query",
+    "DAX",
+    "Git",
+    "CI/CD",
     "Linux",
     "Windows",
     "Docker",
   ],
-}
+};
 
 export const education = [
   {
-    period: "2026 — 2028",
-    title: "Master MIAGE",
-    school: "Parcours en préparation",
-    active: false,
-  },
-  {
-    period: "2025 — 2026",
-    title: "Licence Informatique en MIAGE",
-    school: "IUT d'Orléans",
+    period: "2026 — 2027",
+    title: "Master 1 MIAGE",
+    school: "Université d'Orléans",
     active: true,
   },
   {
+    period: "2025 — 2026",
+    title: "L3 MIAGE",
+    school: "Université d'Orléans",
+    active: false,
+  },
+  {
     period: "2022 — 2025",
-    title: "BUT Informatique",
+    title: "DUT Informatique (Bac+2)",
     school: "IUT d'Orléans",
     active: false,
   },
@@ -281,7 +344,7 @@ export const education = [
     school: "Mention Assez Bien — Lycée Jacques-de-Vaucanson, Tours",
     active: false,
   },
-]
+];
 
 export const experiences = [
   {
@@ -289,7 +352,7 @@ export const experiences = [
     title: "Stage Développeur — EDF",
     location: "Dampierre-en-Burly",
     description:
-      "Migration d'une application web interne vers Power BI pour améliorer le suivi des demandes de travaux et tâches d'ordre de travail.",
+      "Migration d'une application web interne vers Power BI afin d'optimiser le suivi des demandes de travaux et des ordres de tâches.",
     tags: ["Informatique", "Power BI", "Power Apps", "Power Automate"],
   },
   {
@@ -308,37 +371,39 @@ export const experiences = [
       "Préparation de commandes et traitement logistique, avec respect des délais et des consignes de qualité.",
     tags: ["Hors informatique", "Logistique"],
   },
-]
+];
 
 export const interests = [
   {
-    title: "Musique",
+    title: "Musculation",
+    description:
+      "La musculation m'aide à garder rigueur, discipline et énergie au quotidien.",
+  },
+  {
+    title: "Danse Salsa",
+    description:
+      "La danse salsa développe mon énergie, ma régularité et mon goût du partage.",
+  },
+  {
+    title: "Piano",
     description: "Je pratique le piano en autodidacte.",
   },
-  {
-    title: "Sport",
-    description: "Le sport m'aide à garder rigueur, discipline et énergie au quotidien.",
-  },
-  {
-    title: "Technologie & innovation",
-    description: "Je suis curieux des nouveaux outils et usages numériques pour apprendre en continu.",
-  }
-]
+];
 
 export const alternanceSection = {
   title: "Alternance MIAGE",
   description:
-    "Je suis en recherche active d'une alternance pour mon parcours MIAGE. Voici les calendriers de formation pour M1 et M2.",
+    "Je suis disponible dès maintenant pour une alternance en développement informatique. Voici les calendriers de formation pour M1 et M2.",
   calendars: [
     {
-      title: "Calendrier alternance M1 (2025/2026)",
+      title: "Calendrier alternance M1 (2026/2027)",
       src: "/images/alternance/m1-2025-2026.png",
-      alt: "Calendrier d'alternance MIAGE M1 2025 2026",
+      alt: "Calendrier d'alternance MIAGE M1 2026 2027",
     },
     {
-      title: "Calendrier alternance M2 (2026/2027)",
+      title: "Calendrier alternance M2 (2027/2028)",
       src: "/images/alternance/m2-2026-2027.png",
-      alt: "Calendrier d'alternance MIAGE M2 2026 2027",
+      alt: "Calendrier d'alternance MIAGE M2 2027 2028",
     },
   ],
-}
+};

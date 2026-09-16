@@ -6,6 +6,7 @@ const budget = projects.find((project) => project.slug === "welabbudget");
 const mobile = projects.find(
   (project) => project.slug === "app-planification-repas",
 );
+const cvUrl = `${import.meta.env.BASE_URL}${profile.cvPath}`;
 </script>
 <template>
   <section id="accueil" class="hero">
@@ -14,11 +15,11 @@ const mobile = projects.find(
       <div class="hero-intro">
         <p class="eyebrow">Portfolio personnel / {{ profile.location }}</p>
         <p class="hero-role">
-          {{ profile.role }}<br /><span>Licence MIAGE — Orléans</span>
+          {{ profile.role }}<br /><span>{{ profile.formation }}</span>
         </p>
         <p class="hero-availability">
           <span class="status-dot" aria-hidden="true"></span>{{ profile.status
-          }}<br />Master MIAGE · Septembre 2026
+          }}<br />Alternance · Rythme 2 semaines / 2 semaines
         </p>
       </div>
       <div class="hero-collage" aria-hidden="true">
@@ -56,6 +57,12 @@ const mobile = projects.find(
       <p class="hero-brief">{{ profile.introduction }}</p>
       <div class="hero-baseline">
         <span>Concevoir. Développer. Apprendre.</span
+        ><a
+          :href="cvUrl"
+          download="CV-Jean-Marc-Jorite.pdf"
+          class="cv-button"
+          aria-label="Télécharger le CV de Jean-Marc Jorite"
+          >Télécharger mon CV <span aria-hidden="true">↓</span></a
         ><a
           :href="profile.socials[0].href"
           target="_blank"
