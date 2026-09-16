@@ -1,4 +1,6 @@
 <script setup>
+import { ref, onMounted, onBeforeUnmount } from "vue";
+import { shouldAnimateEntrance } from "../utils/motion";
 import { projects } from "../data";
 import { profile } from "../profile";
 import { mediaUrl } from "../utils/media";
@@ -7,9 +9,18 @@ const mobile = projects.find(
   (project) => project.slug === "app-planification-repas",
 );
 const cvUrl = `${import.meta.env.BASE_URL}${profile.cvPath}`;
+const hero = ref(null);
+const animateEntrance = shouldAnimateEntrance();
+const mediaReady = ref(false);
+let disposed = false;
+onMounted(async () => {
+  await Promise.allSettled([...hero.value.querySelectorAll("img")].map((img) => img.decode()));
+  if (!disposed) mediaReady.value = true;
+});
+onBeforeUnmount(() => { disposed = true; });
 </script>
 <template>
-  <section id="accueil" class="hero">
+  <section ref="hero" id="accueil" class="hero" :class="{ 'has-entrance': animateEntrance, 'media-ready': mediaReady }">
     <div class="hero-grain" aria-hidden="true"></div>
     <div class="hero-top container">
       <div class="hero-intro">
@@ -51,8 +62,8 @@ const cvUrl = `${import.meta.env.BASE_URL}${profile.cvPath}`;
     </div>
     <div class="hero-bottom container">
       <h1 class="hero-name">
-        <span>JEAN-MARC</span
-        ><span class="hero-surname">JORITE<span class="name-dot">.</span></span>
+        <span class="name-mask"><span class="name-line">JEAN-MARC</span></span>
+        <span class="name-mask hero-surname"><span class="name-line">JORITE<span class="name-dot">.</span></span></span>
       </h1>
       <p class="hero-brief">{{ profile.introduction }}</p>
       <div class="hero-baseline">

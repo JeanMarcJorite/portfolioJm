@@ -1,0 +1,178 @@
+/* Shared motion vocabulary. CSS is the single source of timing values. */
+:root {
+  --motion-fast: 200ms;
+  --motion-ui: 350ms;
+  --motion-copy: 500ms;
+  --motion-reveal: 650ms;
+  --motion-title: 800ms;
+  --motion-media: 450ms;
+  --motion-dialog: 250ms;
+  --motion-exit: 180ms;
+  --stagger-short: 70ms;
+  --stagger: 80ms;
+  --stagger-title: 100ms;
+  --start-title: 100ms;
+  --start-copy: 250ms;
+  --start-media: 350ms;
+  --start-actions: 450ms;
+  --reveal-distance: 24px;
+  --duration: var(--motion-reveal);
+  --ease-hover: ease;
+  --ease-exit: ease-in;
+}
+html { scrollbar-gutter: stable; }
+.hero { background: #121212; }
+.hero-top {
+  height: auto;
+  min-height: 440px;
+  padding-top: 140px;
+  padding-bottom: 45px;
+  align-items: start;
+}
+.hero-collage {
+  position: relative;
+  grid-column: 5 / 11;
+  grid-row: 1;
+  width: 100%;
+  height: 280px;
+  top: auto;
+  left: auto;
+}
+.hero-intro { grid-row: 1; }
+.hero-cta { grid-row: 1; }
+.hero-bottom { padding-top: 10px; }
+.collage-caption { top: calc(100% + 12px); }
+.hero-name { line-height: 0.9; }
+.hero-name .name-mask { overflow: clip; padding-block: 0.08em; }
+.hero-name .name-line { display: block; }
+.hero-name .hero-surname { margin-top: 0; }
+.hero-desktop, .hero-mobile { box-shadow: 0 12px 24px #0003; }
+.hero-baseline { flex-wrap: wrap; }
+.hero .cv-button { color: #f1efe8; }
+.hero .cv-button:is(:hover, :focus-visible) { color: #121212; }
+.hero .hero-intro .eyebrow, .hero-role span, .hero-brief, .collage-caption { color: #b9b9b3; }
+
+@keyframes enter-copy {
+  from { opacity: 0; transform: translateY(var(--entry-distance, 16px)); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes enter-title {
+  from { opacity: 0; transform: translateY(100%); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes enter-media {
+  from { opacity: 0; transform: scale(0.97); }
+  to { opacity: 1; transform: scale(1); }
+}
+.site-header.has-entrance .nav-row {
+  --entry-distance: -8px;
+  animation: enter-copy var(--motion-ui) var(--ease) both;
+}
+.hero.has-entrance .name-line {
+  animation: enter-title var(--motion-title) var(--ease) var(--start-title) both;
+}
+.hero.has-entrance .hero-surname .name-line { animation-delay: calc(var(--start-title) + var(--stagger-title)); }
+.hero.has-entrance :where(.hero-intro .eyebrow, .hero-role, .hero-availability, .hero-brief) {
+  animation: enter-copy var(--motion-copy) var(--ease) var(--start-copy) both;
+}
+.hero.has-entrance .hero-role { animation-delay: var(--start-copy); }
+.hero.has-entrance .hero-role span { display: inline-block; animation: fade-in var(--motion-copy) var(--ease) calc(var(--start-copy) + var(--stagger-short)) backwards; }
+.hero.has-entrance .hero-availability { animation-delay: calc(var(--start-copy) + 2 * var(--stagger-short)); }
+.hero.has-entrance .hero-brief { animation-delay: calc(var(--start-copy) + 3 * var(--stagger-short)); }
+.hero.has-entrance :is(.hero-cta, .hero-baseline > *) {
+  --entry-distance: 12px;
+  animation: enter-copy var(--motion-ui) var(--ease) var(--start-actions) backwards;
+}
+.hero.has-entrance .hero-baseline > :nth-child(2) { animation-delay: calc(var(--start-actions) + var(--stagger-short)); }
+.hero.has-entrance .hero-baseline > :nth-child(3) { animation-delay: calc(var(--start-actions) + 2 * var(--stagger-short)); }
+.hero.has-entrance .hero-baseline > :nth-child(4) { animation-delay: calc(var(--start-actions) + 3 * var(--stagger-short)); }
+.hero.has-entrance:not(.media-ready) .hero-collage { opacity: 0; }
+.hero.has-entrance.media-ready .hero-collage {
+  animation: enter-media var(--motion-reveal) var(--ease) var(--start-media) both;
+}
+.detail-page.has-entrance .detail-hero :is(.back-link, .detail-kicker, h1, .detail-summary, .detail-meta, .tags) {
+  animation: enter-copy var(--motion-copy) var(--ease) var(--start-copy) both;
+}
+.detail-page.has-entrance .detail-hero h1 { animation-duration: var(--motion-title); animation-delay: var(--start-title); }
+.detail-page.has-entrance .detail-meta { animation-delay: var(--start-actions); }
+
+[data-reveal] {
+  transition: opacity var(--motion-reveal) var(--ease), transform var(--motion-reveal) var(--ease);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+[data-stagger="1"] { --reveal-delay: var(--stagger); }
+[data-stagger="2"] { --reveal-delay: calc(2 * var(--stagger)); }
+[data-stagger="3"] { --reveal-delay: calc(3 * var(--stagger)); }
+.reveal-pending { opacity: 0; transform: translateY(var(--reveal-distance)); }
+.reveal-pending:focus-within { opacity: 1; transform: none; transition: none; }
+.project-image-frame { transition: none; }
+.project-image-frame img { transition: transform var(--motion-media) var(--ease); }
+.project-link:is(:hover, :focus-visible) .project-image-frame { transform: rotate(-7deg); }
+.project-link:is(:hover, :focus-visible) .visual-app-planification-repas .project-image-frame { transform: rotate(8deg); }
+.project-link:is(:hover, :focus-visible) .project-image-frame img { transform: scale(1.025); }
+.project-open { transform: translateY(12px); transition: opacity var(--motion-fast) var(--ease-hover), transform var(--motion-fast) var(--ease-hover); }
+.cover-decoration { transition: transform var(--motion-media) var(--ease); }
+.project-link:focus-visible .cover-decoration { transform: rotate(15deg); }
+.circle-button, .cv-button, .text-link, .icon-button, .contact-email, .skill-items li {
+  transition-duration: var(--motion-fast);
+  transition-timing-function: var(--ease-hover);
+}
+.contact-email:is(:hover, :focus-visible) { color: #ff826c; }
+.other-projects a:focus-visible > span:last-child { transform: translate(3px, -3px); }
+.desktop-nav a:focus-visible::after { transform: scale(1); }
+.site-header, .other-projects a > span:last-child { transition-duration: var(--motion-fast); }
+
+.mobile-menu-dialog {
+  --accent-readable: #ff826c;
+  position: fixed;
+  inset: 12px 12px auto auto;
+  margin: 0;
+  padding: 0;
+  width: min(600px, calc(100% - 24px));
+  max-width: none;
+  max-height: calc(100svh - 24px);
+  border: 1px solid #45453e;
+  background: #121212;
+  color: #f1efe8;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+.mobile-menu-panel { padding: 12px clamp(22px, 4vw, 40px) 24px; }
+.mobile-menu-top { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.mobile-menu-dialog .mobile-nav { display: grid; padding-inline: 0; max-height: none; }
+.mobile-menu-dialog .menu-toggle { display: block; }
+.mobile-menu-dialog::backdrop, .lightbox::backdrop { background: rgb(0 0 0 / 70%); }
+:is(.mobile-menu-dialog, .lightbox)[open] { animation: enter-copy var(--motion-dialog) var(--ease) both; --entry-distance: 12px; }
+:is(.mobile-menu-dialog, .lightbox)[open]::backdrop { animation: fade-in var(--motion-dialog) var(--ease) both; }
+:is(.mobile-menu-dialog, .lightbox).is-closing { animation: leave-dialog var(--motion-exit) var(--ease-exit) both; }
+:is(.mobile-menu-dialog, .lightbox).is-closing::backdrop { animation: fade-in var(--motion-exit) var(--ease-exit) reverse both; }
+@keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes leave-dialog { to { opacity: 0; transform: translateY(12px); } }
+
+@media (min-width: 700px) and (max-width: 1099px) {
+  .hero-top { padding-top: 130px; min-height: 470px; row-gap: 30px; }
+  .hero-collage { grid-column: 6 / 13; grid-row: 1 / 3; height: 310px; margin-top: 40px; }
+  .hero-cta { position: static; grid-column: 1 / 4; grid-row: 2; margin: 0; }
+}
+@media (max-width: 699px) {
+  :root { --reveal-distance: 12px; }
+  .hero-top { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); padding-top: 110px; padding-bottom: 25px; min-height: 0; gap: 24px; }
+  .hero-intro { grid-column: 1 / -1; }
+  .hero-collage { grid-column: 1 / -1; grid-row: 2; width: min(78%, 380px); height: clamp(175px, 48vw, 285px); justify-self: end; margin-top: 35px; }
+  .hero-desktop { max-height: 100%; }
+  .hero-mobile { height: 80%; right: 0; }
+  .hero-cta { position: static; grid-column: 1; grid-row: 2; align-self: end; margin: 0 0 12px; }
+  .hero-bottom { padding-top: 0; }
+  .hero-name { font-size: 12.9vw; }
+  .hero.has-entrance :is(.hero-intro .eyebrow, .hero-role, .hero-availability, .hero-brief) { --entry-distance: 12px; }
+}
+@media (hover: none), (pointer: coarse) {
+  .project-open { opacity: 1; transform: none; }
+  .project-link:hover .project-image-frame img, .project-link:hover .cover-decoration { transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+  .reveal-pending, .hero.has-entrance:not(.media-ready) .hero-collage { opacity: 1; transform: none; }
+  .project-link:is(:hover, :focus-visible) .project-image-frame img, .project-link:is(:hover, :focus-visible) .cover-decoration { transform: none; }
+  .circle-button:is(:hover, :focus-visible), .other-projects a:is(:hover, :focus-visible) > span:last-child, .skill-items li:hover { transform: none; }
+}

@@ -1,6 +1,8 @@
 <script setup>
 import { ref, onMounted, onUnmounted, watch, nextTick } from "vue";
 import { useRoute } from "vue-router";
+import { useModalDialog } from "../composables/useModalDialog";
+import { shouldAnimateEntrance } from "../utils/motion";
 const route = useRoute();
 const scrolled = ref(false);
 const activeSection = ref("");
@@ -8,6 +10,8 @@ const mobileMenuOpen = ref(false);
 const darkMode = ref(false);
 const menuToggle = ref(null);
 const mobilePanel = ref(null);
+const animateEntrance = shouldAnimateEntrance();
+useModalDialog(mobilePanel, () => mobileMenuOpen.value);
 const links = [
   { label: "À propos", section: "#apropos" },
   { label: "Compétences", section: "#competences" },
@@ -42,46 +46,24 @@ function toggleDark() {
 function closeMenu() {
   mobileMenuOpen.value = false;
 }
-function onKey(event) {
-  if (!mobileMenuOpen.value) return;
-  if (event.key === "Escape") {
-    closeMenu();
-    menuToggle.value?.focus();
-  }
-  if (event.key === "Tab") {
-    const items = [
-      menuToggle.value,
-      ...mobilePanel.value.querySelectorAll("a"),
-    ];
-    const current = items.indexOf(document.activeElement);
-    if (event.shiftKey && current <= 0) {
-      event.preventDefault();
-      items.at(-1).focus();
-    } else if (!event.shiftKey && current === items.length - 1) {
-      event.preventDefault();
-      items[0].focus();
-    }
-  }
-}
 function onResize() {
   if (window.innerWidth >= 1100) closeMenu();
+  updateScroll();
 }
-watch(() => route.fullPath, closeMenu);
-watch(mobileMenuOpen, async (open) => {
+watch(() => route.fullPath, async () => {
+  closeMenu();
   await nextTick();
-  if (open) mobilePanel.value?.querySelector("a")?.focus();
+  updateScroll();
 });
 onMounted(() => {
   darkMode.value = document.documentElement.classList.contains("dark");
   updateScroll();
   window.addEventListener("scroll", updateScroll, { passive: true });
-  window.addEventListener("keydown", onKey);
   window.addEventListener("resize", onResize);
 });
 onUnmounted(() => {
   cancelAnimationFrame(frame);
   window.removeEventListener("scroll", updateScroll);
-  window.removeEventListener("keydown", onKey);
   window.removeEventListener("resize", onResize);
 });
 </script>
@@ -91,6 +73,7 @@ onUnmounted(() => {
     :class="{
       'is-scrolled': scrolled || route.name !== 'accueil',
       'menu-open': mobileMenuOpen,
+      'has-entrance': animateEntrance,
     }"
   >
     <div class="container nav-row">
@@ -131,19 +114,29 @@ onUnmounted(() => {
           class="menu-toggle"
           :aria-expanded="mobileMenuOpen"
           aria-controls="mobile-navigation"
+          aria-haspopup="dialog"
           @click="mobileMenuOpen = !mobileMenuOpen"
         >
           {{ mobileMenuOpen ? "Fermer −" : "Menu +" }}
         </button>
       </div>
     </div>
-    <nav
-      v-if="mobileMenuOpen"
+  </header>
+  <Teleport to="body">
+    <dialog
       id="mobile-navigation"
       ref="mobilePanel"
-      class="mobile-nav container"
+      class="mobile-menu-dialog"
       aria-label="Navigation mobile"
+      @cancel.prevent="closeMenu"
+      @click="(event) => { if (event.target === mobilePanel) closeMenu(); }"
     >
+      <div class="mobile-menu-panel">
+        <div class="mobile-menu-top">
+          <span class="monogram" aria-hidden="true">JMJ<span>.</span></span>
+          <button type="button" class="menu-toggle" autofocus @click="closeMenu">Fermer −</button>
+        </div>
+        <nav class="mobile-nav" aria-label="Sections du portfolio">
       <router-link
         v-for="(link, i) in links"
         :key="link.section"
@@ -157,6 +150,8 @@ onUnmounted(() => {
         ><span>0{{ i + 1 }}</span
         >{{ link.label }}<span aria-hidden="true">↗</span></router-link
       >
-    </nav>
-  </header>
+        </nav>
+      </div>
+    </dialog>
+  </Teleport>
 </template>
